@@ -12,6 +12,9 @@ public class Main {
         audi.model = "A4";
         audi.color = "black";
         audi.printAttributes();
+        audi.travel(150);
+        audi.printAttributes();
+        
         
         Car bmw = new Car();
         bmw.brand = "BMW";
@@ -21,10 +24,13 @@ public class Main {
         Car fiat = new Car(2010);
         System.out.println("Godina proizvodnje " + fiat.getBuildYear());
         
-        Car lada = new Car("Lada", "Niva", "green", 2018, 0, 20, 5);
+        Car lada = new Car("Lada", "Niva", "green", 2018, 0, 50, 10);
         lada.printAttributes();
-        lada.travel(100);
+        lada.travel(300);
         lada.printAttributes();
+        lada.travel(200);
+        lada.printAttributes();
+        
     }
     
 }

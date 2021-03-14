@@ -8,7 +8,7 @@ public class Car {
     private int buildYear;
     private int mileage = 0;
     private int fuel;
-    private int consumption;
+    private int consumption = 5;
     
     public Car() {
         this.brand = "";
@@ -62,16 +62,20 @@ public class Car {
         System.out.println("Build Year:  " + this.getBuildYear());
         System.out.println("Mileage: " + this.getMileage());
         System.out.println("Current fuel: " + this.getFuel());
+        System.out.println("");
     }
     
     public void travel(int distance) {
-        this.setMileage(this.getMileage() + distance);
-        
-        int spentFuel = this.getConsumption() * distance;
-        int newFuel = this.getFuel() -spentFuel;
-        this.setFuel(newFuel);
-        
+        int fuelNeededForTrip = this.getConsumption() * distance / 100;
+        if (this.getFuel() >= fuelNeededForTrip) {
+             this.setMileage(this.getMileage() + distance);
+             this.setFuel(this.getFuel() - fuelNeededForTrip);
+             System.out.println("Uspesno je predjen put od " + distance + " kilometara");
+        } else {
+             System.out.println("Nema dovoljno goriva za takav put.");
+        }
     }
+    
 }
 
 
